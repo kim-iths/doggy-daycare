@@ -4,14 +4,14 @@ const OwnersList = () => {
     const owners = JSON.parse(localStorage.getItem("owners"))
 
     const ownersElements = owners.map((owner, index) => (
-        <div>{owners[index]}</div>
+        <div>{owner}</div>
     ))
 
     
     return (
     <section>
         <p>Kunder</p>
-            <div id="owners-container">
+        <div id="owners-container">
             {ownersElements}
         </div>
     </section>

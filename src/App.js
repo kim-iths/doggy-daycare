@@ -49,3 +49,9 @@ switch(currentPage){
 }
 
 export default App;
+
+//TODO
+
+//back button
+//nicer colors
+//better support for mobile

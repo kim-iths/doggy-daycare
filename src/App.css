@@ -40,7 +40,7 @@ button {
 }
 
 button:hover {
-  background-color: rgb(0, 0, 100);
+  background-color: teal;
   cursor: pointer;
 }
 
@@ -56,6 +56,7 @@ button:hover {
   text-align: center;
 }
 
+/* owners */
 #owners-container {
   margin: 8px;
   display: grid;
@@ -74,8 +75,53 @@ button:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
 }
 
+
+
+/* dogs */
+#dogs-container {
+  margin: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.list-item-dog {
+  color: lightgray;
+  padding: 8px;
+  align-items: center ;
+  background-color: darkslategrey;
+  display: flex;
+  flex-direction: row;
+  height: 7em;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
+}
+
+.dog-img {
+  margin-left: 8px;
+
+  object-fit: cover;
+  width: 6em;
+  height: 6em;
+}
+
+.dog-name {
+  margin-left: 16px;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.dog-breed {
+  text-align: right;
+  width: 100%;
+  opacity: 0.75;
+}
+
 @media (max-width: 600px) {
   #owners-container {
+    grid-template-columns: 1fr;
+  }
+  
+  #dogs-container {
     grid-template-columns: 1fr;
   }
 }
