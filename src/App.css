@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+body {
+  background-color: slategray;
+  ;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+button {
+  margin: 4px;
+  font-size: 17pt;
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: darkslategray;
+  color: lightgray;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
+}
+
+button:hover {
+  background-color: rgb(0, 0, 100);
+  cursor: pointer;
+}
+
+.welcome-page {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-page p {
+  font-size: 16pt;
+  max-width: 24em;
+  text-align: center;
+}
+
+#owners-container {
+  margin: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+#owners-container div {
+  font-size: 16pt;
+  color: lightgray;
+  background-color: darkslategray;
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
+}
+
+@media (max-width: 600px) {
+  #owners-container {
+    grid-template-columns: 1fr;
+  }
+}
