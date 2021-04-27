@@ -81,7 +81,7 @@ button:hover {
 #dogs-container {
   margin: 16px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 16px;
 }
 
@@ -94,14 +94,19 @@ button:hover {
   flex-direction: row;
   height: 7em;
   box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
+  transition: background-color, height, 0.4s;
+}
+
+.list-item-dog:hover {
+  background-color: teal;
 }
 
 .dog-img {
   margin-left: 8px;
-
   object-fit: cover;
   width: 6em;
   height: 6em;
+  transition: height 0.5s;
 }
 
 .dog-name {
@@ -110,10 +115,14 @@ button:hover {
   font-weight: bold;
 }
 
-.dog-breed {
+.dog-secondary-info {
   text-align: right;
   width: 100%;
   opacity: 0.75;
+}
+
+.dog-secondary-info p {
+  margin: 0px;
 }
 
 @media (max-width: 600px) {
@@ -124,4 +133,9 @@ button:hover {
   #dogs-container {
     grid-template-columns: 1fr;
   }
+}
+
+.item-open {
+  height: 18em;
+  transition: height 0.5s;
 }
