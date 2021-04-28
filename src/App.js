@@ -25,10 +25,10 @@ switch(currentPage){
     content = <Welcome goToOwners={() => setCurrentPage(OWNERS)} goToDogs={() => setCurrentPage(DOGS)}/>
     break
   case OWNERS:
-    content = <OwnersList />
+    content = <OwnersList back={() => setCurrentPage(WELCOME)} />
     break
   case DOGS:
-    content = <DogsList />
+    content = <DogsList back={() => setCurrentPage(WELCOME)}/>
     break
   default: 
     content = <div>null</div>
@@ -37,9 +37,7 @@ switch(currentPage){
   return (
     <div className="App">
       <header className="App-header">
-        <h2>
-          Doggy Daycare
-        </h2>
+        <h2>Doggy Daycare</h2>
       </header>
       <main>
         {content}
@@ -53,5 +51,6 @@ export default App;
 //TODO
 
 //back button
+
 //nicer colors
 //better support for mobile

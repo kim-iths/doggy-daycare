@@ -13,10 +13,21 @@ export async function getData() {
     let dogs = []
     
     data.forEach((dog, i)=> {
-        let owner = dog.owner.name + ' ' + dog.owner.lastName
+        let owner = { 
+            'name' : dog.owner.name + ' ' + dog.owner.lastName, 
+            'phone' : dog.owner.phoneNumber,
+            'dog' : dog.name + ', ' + dog.breed }
         owners[i] = owner
         
-        let currentDog = { 'name' : dog.name, 'sex' : dog.sex, 'breed' : dog.breed, imgUrl : dog.img, 'isPresent' : dog.present, 'age' : dog.age, 'chipNumber' : dog.chipNumber }
+        let currentDog = { 
+            'name' : dog.name, 
+            'sex' : dog.sex, 
+            'breed' : dog.breed, 
+            'imgUrl' : dog.img, 
+            'present' : dog.present, 
+            'age' : dog.age, 
+            'chipNumber' : dog.chipNumber, 
+            'owner' : owner.name + ', ' + owner.phone }
 
         dogs[i] = currentDog
     });

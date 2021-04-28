@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 5em;
@@ -20,7 +15,6 @@
 
 body {
   background-color: slategray;
-  ;
 }
 
 .App-link {
@@ -28,11 +22,10 @@ body {
 }
 
 button {
-  margin: 4px;
+  margin: 8px;
   font-size: 17pt;
   padding: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
+  width: 6em;
   background-color: darkslategray;
   color: lightgray;
   border: none;
@@ -58,13 +51,13 @@ button:hover {
 
 /* owners */
 #owners-container {
-  margin: 8px;
+  margin: 16px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: auto;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 
 #owners-container div {
@@ -76,6 +69,19 @@ button:hover {
 }
 
 
+#owners-container div p {
+  font-size: 14pt;
+}
+
+#owners-container div .owner-name {
+  margin-top: auto;
+  font-size: 16pt;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-bottom: 10px;
+}
 
 /* dogs */
 #dogs-container {
@@ -86,36 +92,52 @@ button:hover {
 }
 
 .list-item-dog {
-  color: lightgray;
   padding: 8px;
-  align-items: center ;
+  user-select: none;
+  color: lightgray;
   background-color: darkslategrey;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 7em;
   box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 4px;
-  transition: background-color, height, 0.4s;
+  transition: background-color, height, 0.3s;
 }
 
 .list-item-dog:hover {
   background-color: teal;
 }
 
+.primary-info {
+  padding-top: 8px;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
 .dog-img {
-  margin-left: 8px;
+  margin-left: 12px;
   object-fit: cover;
   width: 6em;
   height: 6em;
-  transition: height 0.5s;
 }
 
 .dog-name {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
   margin-left: 16px;
   font-size: 15pt;
   font-weight: bold;
 }
 
+.dog-name span {
+  opacity: 0.75;
+  font-size: 11pt;
+  font-weight: normal;
+}
+
 .dog-secondary-info {
+  align-self: center;
   text-align: right;
   width: 100%;
   opacity: 0.75;
@@ -123,6 +145,37 @@ button:hover {
 
 .dog-secondary-info p {
   margin: 0px;
+}
+
+.dog-info {
+  margin-top: 8px;
+  border-top: 1px solid rgba(200, 200, 200, 0.5);
+  opacity: 0;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 16px;
+  text-align: left;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:  visibility, 0.15s;
+}
+
+.dog-info p {
+  margin-top: 8px;
+}
+
+#dog-owner {
+  font-weight: bold;
+  font-size: 14spt;
+} 
+
+.item-open > .dog-info {
+  opacity: 1;
+  visibility: visible;
+  transition:  visibility 0.5s;
 }
 
 @media (max-width: 600px) {
@@ -136,6 +189,6 @@ button:hover {
 }
 
 .item-open {
-  height: 18em;
-  transition: height 0.5s;
+  height: 15em;
+  transition: height 0.3s;
 }

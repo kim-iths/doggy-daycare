@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const DogsList = () => {
+const DogsList = ({back}) => {
     
     const dogs = JSON.parse(localStorage.getItem('dogs'))
     
@@ -13,13 +13,16 @@ const DogsList = () => {
         
     // setIsOpen([])
     const dogsElements = dogs.map((dog, index) => (
-        <div className="list-item-dog-">
-
-        <div key={index} id={index} className={isOpenArray[index] ? "primary-info item-open" : "list-item-dog"}
+        <div  key={index} 
+        id={index}
+        className={isOpenArray[index] ? "list-item-dog item-open" : "list-item-dog"} 
         onClick={() => toggleInfo(index)}>
+
+        <div className={isOpenArray[index] ? "primary-info item-open" : "primary-info"}>
             <img src={dog.imgUrl} alt={dog.name} className="dog-img"/>
             <p className="dog-name">
                 {dog.name}
+                <span>{dog.sex == "male" ? "Hane" : "Hona"}</span>
             </p>
             <div className="dog-secondary-info">
             <p className="dog-breed">
@@ -31,7 +34,9 @@ const DogsList = () => {
             </div>
         </div>
             <div className="dog-info">
-
+                <p>{dog.name} är {dog.present ? "" : "inte "}inne</p>
+                <p>{dog.chipNumber}</p>
+                <p id="dog-owner">{dog.owner}</p>
             </div>
         </div>
     ))
@@ -51,6 +56,7 @@ const DogsList = () => {
     
     return (
         <section>
+            <button onClick={back}>Tillbaka</button>
             <p>Hundar</p>
             <div id="dogs-container">  
                 {dogsElements}
